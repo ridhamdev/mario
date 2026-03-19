@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario</title>
+    <link rel="stylesheet" href="style.css">
+    <script href="script.js"></script>
+</head>
+<body>
+
+<div id="menu">
+    <h1 class="title">PIXEL QUEST</h1>
+
+    <div class="menu-buttons">
+        <button id="startBtn">START GAME</button>
+        <button id="howBtn">HOW TO PLAY</button>
+    </div>
+
+    <div id="howToPlay" class="hidden">
+        <h2>HOW TO PLAY</h2>
+        <ul>
+            <li>← → : Move</li>
+            <li>SPACE : Jump</li>
+            <li>Avoid enemies</li>
+            <li>Time jumps on disappearing blocks</li>
+            <li>Reach the pipe to win</li>
+        </ul>
+        <button id="closeHow">CLOSE</button>
+    </div>
+</div>
+
+<div id="hud" class="hidden">
+    <div class="hud-box">LEVEL 1</div>
+    <div class="hud-box">LIVES: ∞</div>
+</div>
+
+<canvas id="gameCanvas"></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>
