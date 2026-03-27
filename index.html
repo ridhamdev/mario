@@ -3,36 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mario</title>
+    <title>Super Mario Web</title>
+    <!-- Authentic 8-bit Mario Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script href="script.js"></script>
 </head>
 <body>
 
 <div id="menu">
     <h1 class="title">PIXEL QUEST</h1>
 
+    <div id="auth-section" class="auth-box">
+        <input type="text" id="usernameInput" placeholder="Enter Username">
+        <button id="loginBtn">LOGIN / REGISTER</button>
+    </div>
+    
+    <div id="user-section" class="auth-box hidden">
+        <p>Welcome, <span id="playerNameDisplay">Player</span>!</p>
+        <p>Progress: Level <span id="playerLevelDisplay">1</span> | Lives: <span id="playerLivesDisplay">3</span> 💖</p>
+        <button id="logoutBtn">LOGOUT</button>
+    </div>
+
     <div class="menu-buttons">
-        <button id="startBtn">START GAME</button>
+        <button id="startBtn" class="hidden">PLAY GAME</button>
         <button id="howBtn">HOW TO PLAY</button>
     </div>
 
     <div id="howToPlay" class="hidden">
         <h2>HOW TO PLAY</h2>
         <ul>
-            <li>← → : Move</li>
+            <li>← → : Move Character</li>
             <li>SPACE : Jump</li>
-            <li>Avoid enemies</li>
-            <li>Time jumps on disappearing blocks</li>
-            <li>Reach the pipe to win</li>
+            <li>Avoid red enemies</li>
+            <li>Watch out for cliffs</li>
+            <li>Use moving & disappearing platforms</li>
+            <li>Reach the green pipe to win</li>
         </ul>
         <button id="closeHow">CLOSE</button>
     </div>
 </div>
 
 <div id="hud" class="hidden">
-    <div class="hud-box">LEVEL 1</div>
-    <div class="hud-box">LIVES: ∞</div>
+    <div class="hud-left">
+        <div class="hud-box">LEVEL <span id="hudLevel">1</span></div>
+        <div class="hud-box">LIVES: <span id="hudLives">3</span> 💖</div>
+    </div>
+    <button id="restartBtn" class="hud-btn">RESTART LEVEL</button>
+</div>
+
+<!-- Modal Overlay for Game Over / Win -->
+<div id="overlay" class="hidden">
+    <div class="modal-box">
+        <h2 id="overlayTitle">Title</h2>
+        <p id="overlayMessage">Message...</p>
+        <div id="overlayButtons" style="display:flex; gap:20px; justify-content:center;">
+            <button id="overlayBtn">Continue</button>
+            <button id="overlayHomeBtn" class="hidden">Home</button>
+        </div>
+    </div>
 </div>
 
 <canvas id="gameCanvas"></canvas>
